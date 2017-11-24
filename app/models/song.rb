@@ -28,7 +28,7 @@ class Song < ActiveRecord::Base
     notes.each do |note|
       if note != ""
         binding.pry
-        self.notes << note
+        self.notes << Note.find_or_create_by(content: note)
       end
     end
   end
