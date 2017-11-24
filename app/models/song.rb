@@ -25,6 +25,7 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents=(notes)
+    binding.pry
     notes.each do |note|
       if note != ""
         self.notes << note
