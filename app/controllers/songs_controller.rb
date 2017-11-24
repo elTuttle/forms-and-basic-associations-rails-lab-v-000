@@ -16,6 +16,9 @@ class SongsController < ApplicationController
     @song = Song.new(song_params)
     notes = []
     notes << params[:song_notes_1]
+    notes << params[:song_notes_2]
+    notes << params[:song_notes_3]
+    @song.note_contents = notes
 
     if @song.save
       redirect_to @song
