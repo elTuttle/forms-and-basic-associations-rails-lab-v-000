@@ -14,7 +14,7 @@ class SongsController < ApplicationController
   def create
     #binding.pry
     @song = Song.new(song_params)
-    @song.genre_name = Genre.find_by(id: params[:genre_id]).name
+    @song.genre_name = Genre.find(params[:genre_id]).name
     notes = []
     notes << params[:song_notes_1]
     notes << params[:song_notes_2]
