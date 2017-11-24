@@ -12,11 +12,11 @@ class Song < ActiveRecord::Base
     self.artist = Artist.find_or_create_by(name: name)
   end
 
-  def artist_name
+  def genre_name
     self.genre.name
   end
 
-  def artist_name=(name)
+  def genre_name=(name)
     self.genre = Genre.find_or_create_by(name: name)
   end
 
