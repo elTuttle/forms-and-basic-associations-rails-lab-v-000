@@ -21,7 +21,8 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents
-    self.notes.content
+    notes_array = []
+    self.notes
   end
 
   def note_contents=(notes)
