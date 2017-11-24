@@ -14,6 +14,7 @@ class SongsController < ApplicationController
   def create
     #binding.pry
     @song = Song.new(song_params)
+    notes = []
 
     if @song.save
       redirect_to @song
