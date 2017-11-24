@@ -14,6 +14,7 @@ class SongsController < ApplicationController
   def create
     binding.pry
     @song = Song.new(song_params)
+    @song.genre_name = Genre.find_by(params[:genre_id])
     notes = []
     notes << params[:song_notes_1]
     notes << params[:song_notes_2]
@@ -53,6 +54,6 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:title, :artist_name, :genre_name)
+    params.require(:song).permit(:title, :artist_name)
   end
 end
